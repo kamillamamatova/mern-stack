@@ -17,3 +17,5 @@ const workoutSchema = new Schema({
         required: true
     }
 }, { timestaps: true })
+
+module.exports = mongoose.model('Workout', workoutSchema)
