@@ -7,6 +7,9 @@ const workoutRoutes = require('./routes/workouts')
 const app = express()
 
 // Middleware
+app.use(express.json())
+
+// Middleware
 // next needs to be invoked to move onto app.get
 app.use((req, res, next) => {
     console.log(req.path, req.method)
