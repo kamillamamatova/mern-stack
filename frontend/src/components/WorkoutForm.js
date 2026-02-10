@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const WorkoutForm = () => {
     const [title, setTitle] = useState('')
     const [load, setLoad] = useState('')
@@ -37,25 +39,28 @@ const WorkoutForm = () => {
             <label>Exercisize Title:</label>
             <input
                 type = "text"
-                onChangeCapture={(e) => setTitle(e.target.value)}
+                onChange = {(e) => setTitle(e.target.value)}
                 value = {title}
             />
 
             <label>Load (in lb):</label>
             <input
                 type = "number"
-                onChangeCapture={(e) => setLoad(e.target.value)}
+                onChange = {(e) => setLoad(e.target.value)}
                 value = {load}
             />
 
             <label>Reps:</label>
             <input
                 type = "number"
-                onChangeCapture={(e) => setReps(e.target.value)}
+                onChange = {(e) => setReps(e.target.value)}
                 value = {reps}
             />
 
             <button>Add Workout</button>
+            {error && <div className = "error">{error}</div>}
         </form>
     )
 }
+
+export default WorkoutForm
